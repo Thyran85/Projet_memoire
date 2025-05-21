@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erreur de Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .email-confirmation {
+            max-width: 500px;
+            padding: 20px;
+            border: 1px solid #dcdcdc;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #fff;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .icon-container {
+            margin-bottom: 20px;
+        }
+
+        .animated-icon {
+            width: 80px;
+            height: 80px;
+        }
+
+        h2 {
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .error-message {
+            color: #fb7c88;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-confirmation">
+        <div class="icon-container">
+            <svg class="animated-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#fb7c88">
+                <path
+                    d="M256 0C114.8 0 0 114.8 0 256s114.8 256 256 256 256-114.8 256-256S397.2 0 256 0zm0 472c-119.4 0-216-96.6-216-216S136.6 40 256 40s216 96.6 216 216-96.6 216-216 216zm-24-320h48v160h-48V152zm0 192h48v48h-48v-48z" />
+            </svg>
+        </div>
+        <h2>Erreur de Confirmation</h2>
+        <p class="error-message">
+            Une erreur s'est produite lors de la confirmation de votre adresse e-mail.
+        </p>
+        {% if error %}
+        <p>{{ error }}</p>
+        {% endif %}
+        <p>Veuillez vérifier votre lien ou contacter le support si le problème persiste.</p>
+    </div>
+</body>
+
+</html>
